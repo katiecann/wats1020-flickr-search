@@ -10,7 +10,8 @@
         <meta name="description" content="Demo of searching via Flickr API using AJAX.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+		<link href='http://fonts.googleapis.com/css?family=Geostar' rel='stylesheet' type='text/css'>
+		
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -27,39 +28,30 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Flickr Search</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Type keywords here." class="form-control" name="searchText">
-            </div>
-            <button type="submit" class="btn btn-primary search" name="searchButton">Search</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-      <h1 class="search-title">Flickr Search</h1>
-      <ul id="images">
+    
+	<div class="container">
+		<div class="page-header text-center">
+			<h1 class="search-title">Flickr Image Search</h1>
+		</div>
+		<form class="form-inline text-center" role="form">
+			<div class="form-group">
+				<input type="text" placeholder="Type keywords here." class="form-control input-lg" name="searchText">
+			</div>
+			<button type="submit" class="btn btn-default btn-lg search" name="searchButton">Search</button>
+		</form>
+		</div>
+      	<div class="container">
+			<div class="row">
+				<ul id="images">
         <!-- TODO: Replace the content in this area with a grid of images based on the results of the search. -->
-        <li class="placeholder">Search for images using the search bar above!</li>
-      </ul>
+      			</ul>
+			</div>
+		</div>
 
       <hr>
 
       <footer>
-        <p>&copy; Jane Student 2015</p>
+        <p>&copy; Katie Cann 2015</p>
       </footer>
     </div> <!-- /container -->
 
@@ -69,10 +61,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="infoModalLabel">Loading...</h4>
+            <h4 class="modal-title" id="infoModalLabel">Fetching...</h4>
           </div>
           <div class="modal-body">
-            Loading...
+            Fetching...
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

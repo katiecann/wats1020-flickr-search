@@ -1,57 +1,44 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-/* Enable these styles if you wish to go into a grid layout.
-ul#images li {
-    width: 120px;
-    height: auto;
-    display: inline-block;
-    position: relative;
-    float: left;
+body {
+	padding-left: 150px;
+	padding-right: 150px;
 }
 
-ul#images li img {
-    display: inline-block;
-    width: 100%;
-    height: auto;
+h1 {
+	font-family: Geostar;
+	font-size: 50px;
+	padding: 20px;
 }
 
-ul#images li button {
-    display: inline-block;
+form {
+	padding: 75px;
+}
+.form-control {
+	color: #F23F90;
 }
 
---- End of grid layout styles. */
+footer {
+	padding: 20px;
+}
+a {
+	color: #F23F90;
+}
+
+#images li {
+    width: 300px;
+}
 
 ul#images {
     list-style-type: none;
 }
 
-ul#images .placeholder {
-    font-size: 2em;
-    font-weight: lighter;
-    color: #666;
-    width: 100%;
-    margin: 2em;
-}
 .modal-body img {
     width: 100%;
     height: auto;
 }
 
 hr {
-    clear:both;
+    clear: both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
