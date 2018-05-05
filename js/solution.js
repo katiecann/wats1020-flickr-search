@@ -12,7 +12,7 @@ $(document).on('ready', function(){
   var searchImages = function(tags) {
     var flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     console.log(tags);
-    $('#images').innerHTML = '<li class="search-throbber">Searching...</li>';
+    $('#images').innerHTML = '<div class="search-throbber">Searching...</div>';
     $.getJSON( flickrAPI, {
       tags: tags,
       tagmode: "any",
@@ -21,7 +21,7 @@ $(document).on('ready', function(){
       $('#images').empty();
       $('h1.search-title').first()[0].innerHTML = "Search for: " + tags;
       $.each( data.items, function( i, item ) {
-        var newListItem = $("<li>")
+        var newListItem = $("<div>")
         // If you're not doing the modal, then show info about the image.
         var newTitle = $('<p class="image-title">').html(item.title).appendTo(newListItem);
         var newDate = $('<p class="image-date">').text(item.date_taken).appendTo(newListItem);
@@ -29,7 +29,7 @@ $(document).on('ready', function(){
         var newLink = $('<a>').attr('href', item.link).text('View on Flickr.').appendTo(newListItem);
 
         // Button only needed if you're doing the modal
-        var newButton = $("<button class='btn btn-sm btn-primary'>enlarge</button>").attr({
+        var newButton = $("<button class='btn btn-sm btn-fis mt-2'>enlarge</button>").attr({
           'data-title': item.title,
           'data-toggle': "modal",
           'data-target': "#infoModal",

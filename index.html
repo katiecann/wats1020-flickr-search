@@ -3,82 +3,83 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Flickr Search</title>
-        <meta name="description" content="Demo of searching via Flickr API using AJAX.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-		<link href='http://fonts.googleapis.com/css?family=Geostar' rel='stylesheet' type='text/css'>
-		
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/main.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Flickr Search</title>
+  <meta name="description" content="Demo of searching via Flickr API using AJAX.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
+  <link href='http://fonts.googleapis.com/css?family=Geostar' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body class="fis">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    
-	<div class="container">
-		<div class="page-header text-center">
-			<h1 class="search-title">Flickr Image Search</h1>
-		</div>
-		<form class="form-inline text-center" role="form">
-			<div class="form-group">
-				<input type="text" placeholder="Type keywords here." class="form-control input-lg" name="searchText">
-			</div>
-			<button type="submit" class="btn btn-default btn-lg search" name="searchButton">Search</button>
-		</form>
-		</div>
-      	<div class="container">
-			<div class="row">
-				<ul id="images">
-        <!-- TODO: Replace the content in this area with a grid of images based on the results of the search. -->
-      			</ul>
-			</div>
-		</div>
+            <![endif]-->
 
-      <hr>
-
-      <footer>
-        <p>&copy; Katie Cann 2015</p>
-      </footer>
-    </div> <!-- /container -->
-
-    <!-- Modal Window used for displaying content-->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="infoModalLabel">Fetching...</h4>
+            <div class="container">
+              <div class="page-header text-center">
+               <h1 class="search-title">Flickr Image Search</h1>
+             </div>
+             <form class="form-inline text-center" role="form">
+               <div class="form-group">
+                <input type="text" placeholder="" id="flickr-search" class="form-control input-lg" name="searchText">
+              </div>
+              <button type="submit" class="btn btn-fis btn-lg search" name="searchButton">Search</button>
+            </form>
           </div>
-          <div class="modal-body">
-            Fetching...
+          <div class="container">
+           <div class="row">
+            <div id="images">
+            </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+        <hr>
+
+        <footer>
+          <p>&copy; Katie Cann 2015</p>
+        </footer>
+      </div> <!-- /container -->
+
+      <!-- Modal Window used for displaying content-->
+      <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="infoModalLabel">Fetching...</h4>
+            </div>
+            <div class="modal-body">
+              Fetching...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-fis" data-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-    <script src="js/vendor/bootstrap.min.js"></script>
+      <script src="js/vendor/bootstrap.min.js"></script>
 
-    <script src="js/main.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/custom.js"></script>
 
     </body>
-</html>
+    </html>

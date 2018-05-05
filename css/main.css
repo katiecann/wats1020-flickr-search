@@ -1,9 +1,9 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-	padding-left: 150px;
-	padding-right: 150px;
+ body {
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 h1 {
@@ -42,3 +42,37 @@ ul#images {
 hr {
     clear: both;
 }
+
+.btn-fis {
+	border: 2px solid #000;
+	border-radius: 0;
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #000;
+}
+
+.btn-fis:hover, .btn-fis:focus, .btn-fis:active {
+	padding: 10px 20px;
+	background-color: #000;
+	color: #fff;
+}
+
+.fis .input-lg, .fis .form-group-lg .form-control {
+    border-radius: 0;
+    border: 2px solid #000;
+}
+
+#images .btn-fis {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.item {
+	margin-bottom: 50px;
+}
+
+
+
+
+
+

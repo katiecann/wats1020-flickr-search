@@ -9,22 +9,22 @@ $(document).on('ready', function(){
   var searchImages = function(tags) {			// Create a function called `searchImages()`. Accept a string value called `tags` as an argument.
     var flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";		// Define the location of the Flickr API
     console.log(tags);
-    $('#images').innerHTML = '<li class="search-throbber">Fetching...</li>';
+    $('#images').innerHTML = '<div class="search-throbber">Fetching...</div>';
     $.getJSON( flickrAPI, {			// Construct a `$.getJSON()` call and a `done()` handler.
       tags: tags,
       tagmode: "any",
       format: "json"
     }).done(function( data ) {
       $('#images').empty();				// Update the display to add the images to the list with the id `#images`.
-      $('h1.search-title').first()[0].innerHTML = "Fetched: " + tags;
+      $('h1.search-title').first()[0].innerHTML = "Fetched:  " + " '" + tags + "'";
       $.each( data.items, function( i, item ) {
-        var newListItem = $("<li class='col-md-6'>");
+        var newListItem = $("<div class='col-md-6 col-lg-4 item'>");
         var newTitle = $('<p class="image-title">').html(item.title).appendTo(newListItem);
         var newDate = $('<p class="image-date">').text(item.date_taken).appendTo(newListItem);
         var newDescription = $('<p class="image-description">').html(item.description).appendTo(newListItem);
         
 
-        var newButton = $("<button class='btn btn-sm btn-default'>enlarge</button>").attr({
+        var newButton = $("<button class='btn btn-sm btn-fis'>enlarge</button>").attr({
           'data-title': item.title,
           'data-toggle': "modal",
           'data-target': "#infoModal",
