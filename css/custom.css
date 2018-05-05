@@ -43,7 +43,7 @@ hr {
     clear: both;
 }
 
-.btn-fis {
+.btn-fis, #images .btn-default {
 	border: 2px solid #000;
 	border-radius: 0;
 	padding: 10px 20px;
@@ -51,7 +51,8 @@ hr {
 	color: #000;
 }
 
-.btn-fis:hover, .btn-fis:focus, .btn-fis:active {
+.btn-fis:hover, .btn-fis:focus, .btn-fis:active,
+#images .btn-default:hover, #images .btn-default:focus, #images .btn-default:active, {
 	padding: 10px 20px;
 	background-color: #000;
 	color: #fff;
@@ -71,6 +72,10 @@ hr {
 	margin-bottom: 50px;
 }
 
+li {
+	list-style: none;
+	margin-bottom: 50px;
+}
 
 
 
